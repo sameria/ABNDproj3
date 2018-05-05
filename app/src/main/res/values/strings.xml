@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Frequently Used Ports Quiz </string>
+    <string name="name_input_prompt">Name </string>
+
+    <string name="q1HTTP">1. Which of the following is the port used for HTTP? </string>
+    <string name="q1_a"> A. 443 </string>
+    <string name="q1_b"> B. 80 </string>
+    <string name="q1_c"> C. 143 </string>
+    <string name="q1_d"> D. 70 </string>
+
+    <string name="q2IMAP">2. Which of the following is the port used for IMAP? </string>
+    <string name="q2_a"> A. 143 </string>
+    <string name="q2_b"> B. 443 </string>
+    <string name="q2_c"> C. 179 </string>
+    <string name="q2_d"> D. 123 </string>
+
+    <string name="q3FTP">3. What two ports are used for FTP</string>
+    <string name="q3_a"> A. 20 </string>
+    <string name="q3_b"> B. 21 </string>
+    <string name="q3_c"> C. 22 </string>
+    <string name="q3_d"> D. 23 </string>
+
+    <string name="q4SNMP">4. What two ports are used for SNMP</string>
+    <string name="q4_a"> A. 161 </string>
+    <string name="q4_b"> B. 162 </string>
+    <string name="q4_c"> C. 163 </string>
+    <string name="q4_d"> D. 164 </string>
+
+    <string name="submitButtonLabel">Submit</string>
+    <string name="reset_button_label">Reset</string>
+
+
+</resources>
