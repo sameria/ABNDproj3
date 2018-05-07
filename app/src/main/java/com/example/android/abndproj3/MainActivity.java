@@ -10,10 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    /**
-     * Initialize Variables
-     */
-    int quizScore = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,19 +21,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method calculates the score for the first question, a radio button.
      */
-    private int calcQuest1(boolean selectA, boolean selectB, boolean selectC, boolean selectD) {
+    private int calcQuest1(boolean selectB) {
+        int quizScore = 0;
         int quest1Score = 0;
-        if (selectA) {
-            quest1Score = quest1Score + 0;
-        }
         if (selectB) {
-            quest1Score = quest1Score + 25;
-        }
-        if (selectC) {
-            quest1Score = quest1Score + 0;
-        }
-        if (selectD) {
-            quest1Score = quest1Score + 0;
+            quest1Score = quest1Score + 20;
         }
         return quest1Score + quizScore;
     }
@@ -44,70 +33,66 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method calculates the score for the second question, a radio button.
      */
-    private int calcQuest2(boolean selectA, boolean selectB, boolean selectC, boolean selectD) {
+    private int calcQuest2(boolean selectA) {
+        int quizScore = 0;
         int quest1Score = 0;
         if (selectA) {
-            quest1Score = quest1Score + 25;
-        }
-        if (selectB) {
-            quest1Score = quest1Score + 0;
-        }
-        if (selectC) {
-            quest1Score = quest1Score + 0;
-        }
-        if (selectD) {
-            quest1Score = quest1Score + 0;
+            quest1Score = quest1Score + 20;
         }
         return quest1Score + quizScore;
     }
 
     /**
      * This method calculates the score for the third question, a checkbox group button.
+     *
      */
-    private int calcQuest3(boolean selectA3, boolean selectB3, boolean selectC3, boolean selectD3) {
-
+    private int calcQuest3() {
+        int quizScore = 0;
         int quest3Score = 0;
-        int quest3bScore = 0;
 
-        if (selectA3) {
-            quest3Score = quest3bScore + 25;
+        CheckBox selectA3 = findViewById(R.id.chOptionOne20);
+        CheckBox selectB3 = findViewById(R.id.chOptionTwo21);
+        CheckBox selectC3 = findViewById(R.id.chOptionThree22);
+        CheckBox selectD3 = findViewById(R.id.chOptionFour23);
+        if (selectA3.isChecked() && selectB3.isChecked() && !selectC3.isChecked() && !selectD3.isChecked()) {
+            quest3Score = quest3Score + 20;
         }
-        if (selectB3) {
-            quest3Score = quest3bScore + 25;
+        return quest3Score + quizScore;
+    }
+    /**
+     * This method calculates the score for the fourth question, a checkbox group button.
+     */
+    private int calcQuest4() {
+        int quizScore = 0;
+        int quest4Score = 0;
+
+        CheckBox selectA4 = findViewById(R.id.chOptionOne160);
+        CheckBox selectB4 = findViewById(R.id.chOptionOne161);
+        CheckBox selectC4 = findViewById(R.id.chOptionOne162);
+        CheckBox selectD4 = findViewById(R.id.chOptionOne163);
+
+        if (selectA4.isChecked() && selectB4.isChecked() && !selectC4.isChecked() && !selectD4.isChecked()) {
+            quest4Score = quest4Score + 20;
         }
-        if (selectC3) {
-            quest3Score = quest3bScore + 0;
-        }
-        if (selectD3) {
-            quest3Score = quest3bScore + 0;
-        }
-        if (quest3bScore > 6) ;
-        return (quest3bScore * 0) + quest3Score + quizScore;
+        return quest4Score + quizScore;
     }
 
-
     /**
-     * This method calculates the score for the third question, a checkbox group button.
+     * This method calculates the score for the fifth question, a text entry question.
      */
-    private int calcQuest4(boolean selectA4, boolean selectB4, boolean selectC4, boolean selectD4) {
+    private int calcQuest5() {
+        int quizScore = 0;
 
-        int quest4Score = 0;
-        int quest4bScore = 0;
+        String quest5Answer = "Telnet";
 
-        if (selectA4) {
-            quest4Score = quest4bScore + 25;
-        }
-        if (selectB4) {
-            quest4Score = quest4bScore + 25;
-        }
-        if (selectC4) {
-            quest4Score = quest4bScore + 0;
-        }
-        if (selectD4) {
-            quest4Score = quest4bScore + 0;
-        }
-        if (quest4bScore > 25) ;
-        return (quest4bScore * 0) + quest4Score + quizScore;
+        EditText select5 = findViewById(R.id.q5_TextEntry);
+        String questionFiveAnswer = select5.getText().toString();
+        if (questionFiveAnswer.equalsIgnoreCase(quest5Answer)) {
+            quizScore = quizScore + 20;
+        } else
+            quizScore = 0;
+
+        return quizScore;
     }
 
     /**
@@ -120,53 +105,47 @@ public class MainActivity extends AppCompatActivity {
         String name = nameEditable.toString();
 
         //Radio-group one
-        RadioButton answerA = findViewById(R.id.rbOptionOne433);
-        boolean selectA1 = answerA.isChecked();
         RadioButton answerB = findViewById(R.id.rbOptionTwo80Correct);
         boolean selectB1 = answerB.isChecked();
-        RadioButton answerC = findViewById(R.id.rbOptionThree143);
-        boolean selectC1 = answerC.isChecked();
-        RadioButton answerD = findViewById(R.id.rbOptionFour70);
-        boolean selectD1 = answerD.isChecked();
 
         //Radio-group two
         RadioButton answerA2 = findViewById(R.id.rbOptionOne143Correct);
         boolean selectA2 = answerA2.isChecked();
-        RadioButton answerB2 = findViewById(R.id.rbOptionTwo443);
-        boolean selectB2 = answerB2.isChecked();
-        RadioButton answerC2 = findViewById(R.id.rbOptionThree179);
-        boolean selectC2 = answerC2.isChecked();
-        RadioButton answerD2 = findViewById(R.id.rbOptionFour123);
-        boolean selectD2 = answerD2.isChecked();
 
         //First checkbox group
         CheckBox quest3Option1 = findViewById(R.id.chOptionOne20);
-        boolean selectA3 = quest3Option1.isChecked();
+        quest3Option1.isChecked();
         CheckBox quest3Option2 = findViewById(R.id.chOptionTwo21);
-        boolean selectB3 = quest3Option2.isChecked();
+        quest3Option2.isChecked();
         CheckBox quest3Option3 = findViewById(R.id.chOptionThree22);
-        boolean selectC3 = quest3Option3.isChecked();
+        quest3Option3.isChecked();
         CheckBox quest3Option4 = findViewById(R.id.chOptionFour23);
-        boolean selectD3 = quest3Option4.isChecked();
+        quest3Option4.isChecked();
 
         //Second checkbox group
         CheckBox quest4Option1 = findViewById(R.id.chOptionOne160);
-        boolean selectA4 = quest4Option1.isChecked();
+        quest4Option1.isChecked();
         CheckBox quest4Option2 = findViewById(R.id.chOptionOne161);
-        boolean selectB4 = quest4Option2.isChecked();
+        quest4Option2.isChecked();
         CheckBox quest4Option3 = findViewById(R.id.chOptionOne162);
-        boolean selectC4 = quest4Option3.isChecked();
+        quest4Option3.isChecked();
         CheckBox quest4Option4 = findViewById(R.id.chOptionOne163);
-        boolean selectD4 = quest4Option4.isChecked();
+        quest4Option4.isChecked();
 
         //Calculates the grade
-        int score1 = calcQuest1(selectA1, selectB1, selectC1, selectD1);
-        int score2 = calcQuest2(selectA2, selectB2, selectC2, selectD2);
-        int score3 = calcQuest3(selectA3, selectB3, selectC3, selectD3);
-        int score4 = calcQuest4(selectA4, selectB4, selectC4, selectD4);
+        int score1 = calcQuest1(selectB1);
+        int score2 = calcQuest2(selectA2);
+        int score3 = calcQuest3();
+        int score4 = calcQuest4();
+        int score5 = calcQuest5();
 
-        // Displays the toast message
-        Toast.makeText(MainActivity.this, name + " Your grade is: " + (score1 + score2 + score3 + score4), Toast.LENGTH_LONG).show();
+        int overallScore = (score1 + score2 + score3 + score4 + score5);
+
+        if (overallScore < 75) {
+            Toast.makeText(MainActivity.this, " Your grade is: " + overallScore + "  Please try again " + name, Toast.LENGTH_LONG).show();
+        }// Displays the toast message
+        else
+            Toast.makeText(MainActivity.this, " Your grade is:  " + overallScore + " Good Job " + name + "!", Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -216,6 +195,10 @@ public class MainActivity extends AppCompatActivity {
         selectC4.setChecked(false);
         CheckBox selectD4 = findViewById(R.id.chOptionOne163);
         selectD4.setChecked(false);
+
+        //Reset Question5 editText field
+        EditText quest5Field = findViewById(R.id.q5_TextEntry);
+        quest5Field.setText(null);
 
     }
 }

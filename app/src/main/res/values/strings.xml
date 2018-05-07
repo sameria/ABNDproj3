@@ -14,20 +14,20 @@
     <string name="q2_c"> C. 179 </string>
     <string name="q2_d"> D. 123 </string>
 
-    <string name="q3FTP">3. What two ports are used for FTP</string>
+    <string name="q3FTP">3. What two ports are used for FTP?</string>
     <string name="q3_a"> A. 20 </string>
     <string name="q3_b"> B. 21 </string>
     <string name="q3_c"> C. 22 </string>
     <string name="q3_d"> D. 23 </string>
 
-    <string name="q4SNMP">4. What two ports are used for SNMP</string>
+    <string name="q4SNMP">4. What two ports are used for SNMP?</string>
     <string name="q4_a"> A. 161 </string>
     <string name="q4_b"> B. 162 </string>
     <string name="q4_c"> C. 163 </string>
     <string name="q4_d"> D. 164 </string>
 
+    <string name="q5Telnet">5. What is the protocol used for port 23, Telnet or SSH?</string>
+    <string name="q5Prompt">Enter Telnet or SSH</string>
     <string name="submitButtonLabel">Submit</string>
     <string name="reset_button_label">Reset</string>
-
-
 </resources>
